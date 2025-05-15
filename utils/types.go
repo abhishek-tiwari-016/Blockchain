@@ -1,6 +1,10 @@
 package utils
 
-import "math/big"
+import (
+	"math/big"
+
+	"github.com/boltdb/bolt"
+)
 
 const TargetBits = 14
 
@@ -12,11 +16,18 @@ type Block struct {
 	Nonce         int
 }
 
+// Blockchain keeps a sequence of Blocks
 type Blockchain struct {
-	Blocks []*Block
+	TIP []byte
+	DB  *bolt.DB
 }
 
 type ProofOfWork struct {
 	Block  *Block
 	Target *big.Int
+}
+
+type BlockchainIterator struct {
+	currentHash []byte
+	db          *bolt.DB
 }
