@@ -1,7 +1,6 @@
 package main
 
 import (
-	"main/utils"
 	"main/utils/cli"
 )
 
@@ -21,9 +20,9 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-	bc := utils.NewBlockchain()
-	defer bc.DB.Close()
+	// bc := utils.NewBlockchain()
+	// defer bc.DB.Close()
 
-	cli := cli.CLI{BC: bc}
+	cli := cli.CLI{}
 	cli.Run()
 }

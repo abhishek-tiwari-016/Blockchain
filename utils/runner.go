@@ -9,14 +9,16 @@ import (
 
 var maxNonce = math.MaxInt64
 
+// Run performs a proof-of-work
 func (pow *ProofOfWork) Run() (int, []byte) {
 	var hashInt big.Int
 	var hash [32]byte
 	nonce := 0
 
-	fmt.Printf("Mining the block containing \"%s\"\n", pow.Block.Data)
+	fmt.Printf("Mining a new block")
 	for nonce < maxNonce {
 		data := pow.PrepareData(nonce)
+
 		hash = sha256.Sum256(data)
 		fmt.Printf("\r%x", hash)
 		hashInt.SetBytes(hash[:])

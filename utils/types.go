@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"main/utils/transactions"
 	"math/big"
 
 	"github.com/boltdb/bolt"
@@ -10,7 +11,7 @@ const TargetBits = 14
 
 type Block struct {
 	Timestamp     int64
-	Data          []byte
+	Transactions  []*transactions.Transaction
 	PrevBlockHash []byte
 	Hash          []byte
 	Nonce         int
