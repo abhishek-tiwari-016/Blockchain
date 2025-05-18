@@ -9,6 +9,7 @@ import (
 
 const TargetBits = 14
 
+// Block represents a block in the blockchain
 type Block struct {
 	Timestamp     int64
 	Transactions  []*transactions.Transaction
