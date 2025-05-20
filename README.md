@@ -34,6 +34,8 @@ A foundational blockchain implementation written in Go, designed for educational
 
 ### Project structure
 
+<pre>
+```
 Blockchain/
 ├── main.go          # Entry point of the application
 ├── go.mod           # Go module file
@@ -41,3 +43,6 @@ Blockchain/
 ├── wallet.dat       # Wallet data file
 ├── utils/           # Utility functions and helpers
 └── README.md        # Project documentation
+```
+</pre>
+
